@@ -36,14 +36,22 @@ public class UserInterface {
         // Phần nhập liệu
         //KieuDucChung
 
-        // Phần nút bấm
-        //NguyenVanBao
+         // Phần nút bấm
+        JButton submitButton = new JButton("Xác nhận");
+        submitButton.setBounds(150, 130, 100, 30);
+        frame.getContentPane().add(submitButton);
 
         // Phần hiển thị kết quả
-        //NguyenVanBao
+        resultLabel = new JLabel("");
+        resultLabel.setBounds(100, 180, 200, 25);
+        frame.getContentPane().add(resultLabel);
 
         // Xử lý sự kiện nút bấm
-        //NguyenVanBao
-       
+        submitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String name = nameField.getText();
+                resultLabel.setText("Xin chào, " + name);
+            }
+        });
     }
 }
